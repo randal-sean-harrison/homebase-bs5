@@ -106,19 +106,19 @@
                   <a href="https://calendar.google.com/" target="_blank" rel="noopener noreferrer"
                      class="text-light mx-2" data-bs-offset="0,30" data-bs-toggle="tooltip" data-bs-placement="bottom"
                      title="Calendar" aria-label="Open Google Calendar">
-                     <i class="fa-regular fa-calendar pointer"></i>
+                     <i class="fas fa-calendar pointer"></i>
                   </a>
 
                   <!-- Gmail -->
                   <a href="https://mail.google.com/" target="_blank" rel="noopener noreferrer" class="text-light mx-2"
-                     data-bs-offset="0,30" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Gmail"
+                     data-bs-offset="0,30" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Mail"
                      aria-label="Mail">
-                     <i class="fa-regular fa-envelope pointer"></i>
+                     <i class="fas fa-envelope pointer"></i>
                   </a>
 
                   <!-- Google Sites -->
                   <a href="https://sites.google.com/" target="_blank" rel="noopener noreferrer" class="text-light mx-2"
-                     data-bs-toggle="tooltip" data-bs-offset="0,30" data-bs-placement="bottom" title="My Website"
+                     data-bs-toggle="tooltip" data-bs-offset="0,30" data-bs-placement="bottom" title="Website"
                      aria-label="Open Google Sites">
                      <i class="fa-solid fa-circle-user pointer"></i>
                   </a>
@@ -155,8 +155,15 @@
 
       <div class="container search-wrapper">
          <div class="search-container shadow-lg rounded-bottom-2">
-            <div class="search-header rounded-top-2">
-               <span id="currentDate" class="fs-2">Loading date...</span>
+            <div class="search-header rounded-top-2 d-flex justify-content-between">
+               <div id="currentDate" class="fs-2">Loading date...</div>
+               <div>
+                  <button type="button" id="reset-search-box"
+                     class="mx-1 btn btn-danger d-none border-0 opacity-50 px-4 white rounded-2">
+                     <i class="fas fa-times text-white me-2"></i>
+                     Clear Search</button>
+               </div>
+
             </div>
 
             <div class="search-body rounded-bottom-2">
@@ -170,16 +177,18 @@
                               src="img/googleSVG.svg" alt="Button links to Google home page">
                         </span>
 
-                        <input type="text" class="form-control form-control-lg fs-3" aria-label="search field" name="q"
-                           id="search-field" placeholder="Search ..." autofocus autocomplete="off" />
+                        <input id="search-field" type="text" class="form-control form-control-lg fs-3"
+                           aria-label="search field" name="q">
 
-                        <button type="button" class="btn btn-primary border-0 px-4 white rounded-2" id="listener-button"
-                           value="submit"><i class="fas fa-magnifying-glass text-white"></i></button>
+                        <button type="button" class="mx-1 btn btn-primary border-0 px-4 white rounded-2"
+                           id="listener-button" value="submit"><i
+                              class="fas fa-magnifying-glass text-white"></i></button>
 
                      </div>
                   </div>
                </form>
             </div>
+
          </div>
       </div>
 

@@ -47,11 +47,12 @@ $(document).ready(function () {
     //  $("#photo-number").html(randomNum);
   }
 
+  // Refresh the image for the background
   $(document).on("click", "#refresh-image", function () {
     writeImageToPage();
   });
 
-  // Reset search box ------------------------------------------------------------
+  // Reset the search box ------------------------------------------------------------
   $("#reset-search-box").on("click", function () {
     // Clear the search field and place cursor back in input
     $("#search-field").val("").focus();
@@ -75,8 +76,16 @@ $(document).ready(function () {
 
   // Show or hide the reset search button
   $("#search-field").on("keyup", function () {
-    if ($(this).val() != "") {
+    if ($(this).val() !== "") {
       $("#reset-search-box").removeClass("d-none");
+    } else {
+      $("#reset-search-box").addClass("d-none");
     }
+  });
+
+  // Clear the clear button on form submit
+  $(window).on("blur", function () {
+    $("#reset-search-box").addClass("d-none");
+    $("#search-field").val("");
   });
 });
