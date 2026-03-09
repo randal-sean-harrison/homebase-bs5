@@ -42,7 +42,7 @@
 
    </head>
 
-   <body>
+   <body class="d-flex flex-column min-vh-100">
 
       <nav class="navbar navbar-expand-xl navbar-custom shadow-sm py-2">
          <div class="container-fluid px-5">
@@ -128,72 +128,77 @@
          </div>
       </nav>
 
-      <div class="sub-nav border border-bottom-light opacity-85">
-         <div class="container-fluid px-5 py-4">
-            <div class="d-flex sub-nav-icons gap-4 align-items-center">
-               <i id="refresh-image" class="fa-solid bright-blue fa-rotate mx-2 fs-2 pointer" data-bs-offset="0,30"
-                  data-bs-toggle="tooltip" data-bs-placement="bottom" title="New Background"></i>
-               <i class="fa-regular bright-blue fa-circle mx-2 fs-2 pointer" data-bs-offset="0,30"
-                  data-bs-toggle="tooltip" data-bs-placement="bottom" title="Link"></i>
-               <i class="fa-regular bright-blue fa-circle mx-2 fs-2 pointer" data-bs-offset="0,30"
-                  data-bs-toggle="tooltip" data-bs-placement="bottom" title="Link"></i>
-               <i class="fa-regular bright-blue fa-circle mx-2 fs-2 pointer" data-bs-offset="0,30"
-                  data-bs-toggle="tooltip" data-bs-placement="bottom" title="Link"></i>
-               <i class="fa-regular bright-blue fa-circle mx-2 fs-2 pointer" data-bs-offset="0,30"
-                  data-bs-toggle="tooltip" data-bs-placement="bottom" title="Link"></i>
-               <i class="fa-regular bright-blue fa-circle mx-2 fs-2 pointer" data-bs-offset="0,30"
-                  data-bs-toggle="tooltip" data-bs-placement="bottom" title="Link"></i>
-               <i class="fa-regular bright-blue fa-circle mx-2 fs-2 pointer" data-bs-offset="0,30"
-                  data-bs-toggle="tooltip" data-bs-placement="bottom" title="Link"></i>
-               <i class="fa-regular bright-blue fa-circle mx-2 fs-2 pointer" data-bs-offset="0,30"
-                  data-bs-toggle="tooltip" data-bs-placement="bottom" title="Link"></i>
-               <i class="fa-regular bright-blue fa-circle mx-2 fs-2 pointer" data-bs-offset="0,30"
-                  data-bs-toggle="tooltip" data-bs-placement="bottom" title="Link"></i>
+
+      <main class="flex-grow-1">
+
+         <div class="sub-nav border border-bottom-light opacity-85">
+            <div class="container-fluid px-5 py-4">
+               <div class="d-flex sub-nav-icons gap-4 align-items-center">
+                  <i id="refresh-image" class="fa-solid bright-blue fa-rotate mx-2 fs-2 pointer" data-bs-offset="0,30"
+                     data-bs-toggle="tooltip" data-bs-placement="bottom" title="New Background"></i>
+                  <i class="fa-regular bright-blue fa-circle mx-2 fs-2 pointer" data-bs-offset="0,30"
+                     data-bs-toggle="tooltip" data-bs-placement="bottom" title="Link"></i>
+                  <i class="fa-regular bright-blue fa-circle mx-2 fs-2 pointer" data-bs-offset="0,30"
+                     data-bs-toggle="tooltip" data-bs-placement="bottom" title="Link"></i>
+                  <i class="fa-regular bright-blue fa-circle mx-2 fs-2 pointer" data-bs-offset="0,30"
+                     data-bs-toggle="tooltip" data-bs-placement="bottom" title="Link"></i>
+                  <i class="fa-regular bright-blue fa-circle mx-2 fs-2 pointer" data-bs-offset="0,30"
+                     data-bs-toggle="tooltip" data-bs-placement="bottom" title="Link"></i>
+                  <i class="fa-regular bright-blue fa-circle mx-2 fs-2 pointer" data-bs-offset="0,30"
+                     data-bs-toggle="tooltip" data-bs-placement="bottom" title="Link"></i>
+                  <i class="fa-regular bright-blue fa-circle mx-2 fs-2 pointer" data-bs-offset="0,30"
+                     data-bs-toggle="tooltip" data-bs-placement="bottom" title="Link"></i>
+                  <i class="fa-regular bright-blue fa-circle mx-2 fs-2 pointer" data-bs-offset="0,30"
+                     data-bs-toggle="tooltip" data-bs-placement="bottom" title="Link"></i>
+                  <i class="fa-regular bright-blue fa-circle mx-2 fs-2 pointer" data-bs-offset="0,30"
+                     data-bs-toggle="tooltip" data-bs-placement="bottom" title="Link"></i>
+               </div>
             </div>
          </div>
-      </div>
 
-      <div class="container search-wrapper">
-         <div class="search-container shadow-lg rounded-bottom-2">
-            <div class="search-header rounded-top-2 d-flex justify-content-between">
-               <div id="currentDate" class="fs-2">Loading date...</div>
-               <div>
-                  <button type="button" id="reset-search-box"
-                     class="mx-1 btn btn-danger d-none border-0 opacity-50 px-4 white rounded-2">
-                     <i class="fas fa-times text-white me-2"></i>
-                     Clear Search</button>
+         <div class="container search-wrapper">
+            <div class="search-container shadow-lg rounded-bottom-2">
+               <div class="search-header rounded-top-2 d-flex justify-content-between">
+                  <div id="currentDate" class="fs-2">Loading date...</div>
+                  <div>
+                     <button type="button" id="reset-search-box"
+                        class="mx-1 btn btn-danger d-none border-0 opacity-50 px-4 white rounded-2">
+                        <i class="fas fa-times text-white me-2"></i>
+                        Clear Search</button>
+                  </div>
+
+               </div>
+
+               <div class="search-body rounded-bottom-2">
+                  <form id="search-form" method="get" action="https://www.google.com/search" target="_blank"
+                     class="rounded-3">
+                     <div class="mb-3">
+                        <div class="input-group input-group-lg">
+
+                           <span class="input-group-text bg-transparent border-0 pointer">
+                              <img width="50px" data-link="https://google.com" class="pointer" data-target="_blank"
+                                 src="img/googleSVG.svg" alt="Button links to Google home page">
+                           </span>
+
+                           <input id="search-field" type="text" class="form-control form-control-lg fs-3"
+                              aria-label="search field" name="q">
+
+                           <button type="button" class="mx-1 btn btn-primary border-0 px-4 white rounded-2"
+                              id="listener-button" value="submit"><i
+                                 class="fas fa-magnifying-glass text-white"></i></button>
+
+                        </div>
+                     </div>
+                  </form>
                </div>
 
             </div>
-
-            <div class="search-body rounded-bottom-2">
-               <form id="search-form" method="get" action="https://www.google.com/search" target="_blank"
-                  class="rounded-3">
-                  <div class="mb-3">
-                     <div class="input-group input-group-lg">
-
-                        <span class="input-group-text bg-transparent border-0 pointer">
-                           <img width="50px" data-link="https://google.com" class="pointer" data-target="_blank"
-                              src="img/googleSVG.svg" alt="Button links to Google home page">
-                        </span>
-
-                        <input id="search-field" type="text" class="form-control form-control-lg fs-3"
-                           aria-label="search field" name="q">
-
-                        <button type="button" class="mx-1 btn btn-primary border-0 px-4 white rounded-2"
-                           id="listener-button" value="submit"><i
-                              class="fas fa-magnifying-glass text-white"></i></button>
-
-                     </div>
-                  </div>
-               </form>
-            </div>
-
          </div>
-      </div>
+
+      </main>
 
       <!-- Footer -->
-      <footer class="p-4 text-white bg-grey">
+      <footer class="mt-auto p-4 text-white bg-grey">
          <div class="container">
             <div class="row justify-content-between">
                <div class="col-12">
